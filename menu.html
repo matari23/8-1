@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        body{
+            background-color: darkolivegreen;
+            color: #fff;
+            text-align: center;
+        }
+        .menu{
+            margin: auto;
+            position: absolute;
+            top: 0;bottom: 0;left: 0;right: 0;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            box-sizing: border-box;
+            font-size: 26px;
+        }
+        .menu_open_button, .menu_item{
+            background-color: #eee;
+            border-radius: 100%;
+            width: 80px;
+            height: 80px;
+            margin-left: -40px;
+            position: absolute;
+            color: #fff;
+            line-height: 80px;
+            text-align: center;
+            transform: translate3d(0,0,0);
+        }
+        .menu_open{display: none;}
+        .lines{
+            width: 25px;
+            height: 3px;
+            display: block;
+            background-color: rgb(3, 73, 22);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: calc(-25px / 2);
+            margin-top: calc(-3px / 2);
+        }
+        .line_1{
+            transform: translate3d(0 , -8px , 0);
+        }
+        .line_2{transform: translate3d(0 , 0 , 0);}
+        .line_3{transform: translate3d(0 , 8px , 0);}
+        
+        .blue{background-color: rgb(64, 109, 233);box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);transition: all 0.3s;}
+        .blue:hover{background-color: rgb(166, 186, 242); box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);}
+
+        .green{background-color: green;box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);transition: all 0.3s;}
+        .green:hover{background-color: rgb(181, 244, 181);box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);}
+
+        .red{background-color: rgb(245, 95, 95);box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);transition: all 0.3s;}
+        .red:hover{background-color: rgb(234, 189, 189);}
+
+        .purple{background-color: rgb(95, 1, 95);box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);transition: all 0.3s;}
+        .purple:hover{background-color: rgb(197, 167, 197);}
+
+        .coral{background-color: rgb(247, 158, 126);box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);transition: all 0.3s;}
+        .coral:hover{background-color: rgb(244, 217, 208);}
+
+        .skyblue{background-color: rgb(169, 225, 247);box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);transition: all 0.3s;}
+        .skyblue:hover{background-color: rgb(217, 231, 236);}
+
+        .menu_open_button{z-index: 2; transform: scale(1.1,1.1) translate3d(0,0,0);box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2); transition: all 400ms ease;}
+        .menu_open_button:hover{transform: scale(1.2,1.2) translate3d(0,0,0);}
+
+        .menu_open:checked + .menu_open_button{
+            transform: scale(0.8,0.8) translate3d(0,0,0);
+            transition: all 200ms linear;
+        }
+        .menu_open:checked ~ .menu_item:nth-child(3){
+            transform: translate3d(0.08361px, -104.9997px, 0);
+            transition: all 180ms ;
+        }
+        .menu_open:checked ~ .menu_item:nth-child(4){
+            transform: translate3d(90.946px, -52.478px, 0);
+            transition: all 280ms ;
+            
+        }
+        .menu_open:checked ~ .menu_item:nth-child(5){
+            transform: translate3d(90.946px, 52.478px, 0);
+            transition: all 380ms ;
+
+        }
+        .menu_open:checked ~ .menu_item:nth-child(6){
+            transform: translate3d(0.08361px, 104.9997px, 0);
+            transition: all 480ms ;
+        }
+        .menu_open:checked ~ .menu_item:nth-child(7){
+            transform: translate3d(-90.946px, 52.478px, 0);
+            transition: all 580ms ;
+        }
+        .menu_open:checked ~ .menu_item:nth-child(8){
+            transform: translate3d(-90.946px, -52.478px, 0);
+            transition: all 680ms ;
+        }
+        .menu_open:checked + .menu_open_button .line_1{
+            transform: translate3d(0,0,0) rotate(45deg);
+        }
+        .menu_open:checked + .menu_open_button .line_2{
+            transform: translate3d(0,0,0) scale(0,0);
+        }
+        .menu_open:checked + .menu_open_button .line_3{
+            transform: translate3d(0,0,0) rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <input type="checkbox" class="menu_open" name="menu_open" id="menu_open">
+        <label for="menu_open" class="menu_open_button">
+            <span class="lines line_1"></span>
+            <span class="lines line_2"></span>
+            <span class="lines line_3"></span>
+        </label>
+        <a href="#" class="menu_item blue">
+            <i class="fa fa-anchor"></i> 
+        </a>
+        <a href="#" class="menu_item green">
+            <i class="fa fa-coffe"></i> 
+        </a>
+        <a href="#" class="menu_item red">
+            <i class="fa fa-heart"></i> 
+        </a>
+        <a href="#" class="menu_item purple">
+            <i class="fa fa-star"></i> 
+        </a>
+        <a href="#" class="menu_item coral">
+            <i class="fa fa-microphone"></i> 
+        </a>
+        <a href="#" class="menu_item skyblue">
+            <i class="fa fa-ipad"></i> 
+        </a>
+    </nav><!-- menu -->
+</body>
+</html>

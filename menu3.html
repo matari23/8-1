@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        body{
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+
+        .menu-open{display: none;}
+        .menu-open-button, .menu-item {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+        }
+        .menu-open-button{
+            background-color: rgba(0,0,0,.8);
+            color: white;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 25% 30% 45% 35%;
+            z-index: 2;
+            animation: button infinite 3s linear;
+            animation-direction: alternate;
+        }
+
+        @keyframes button {
+            0%{border-radius: 25% 30% 45% 35%;}
+            20%{border-radius: 50% 20% 35% 25%;}
+            40%{border-radius: 1% 50% 25% 50%;}
+            60%{border-radius: 30% 25% 255% 100%;}
+            80%{border-radius: 50% 30% 65% 50%;}
+            100%{border-radius: 40% 35% 25% 7%;}
+        }
+
+        .item1{
+            background-color: rgba(255,0,0,.7); 
+            left: 80px; top: 90px; 
+            border-radius: 50%; 
+            animation: item1 infinite 3.2s linear; 
+            animation-direction: alternate;}
+        @keyframes item1 {
+            0%{border-radius: 25% 30% 45% 35%;}
+            20%{border-radius: 30% 25% 55% 100%;}
+            40%{border-radius: 10% 50% 25% 50%;}
+            60%{border-radius: 50% 25% 255% 150%;}
+            80%{border-radius: 40% 35% 25% 70%;}
+            100%{border-radius: 1% 50% 25% 50%;}
+        }
+        .item2
+        {background-color: rgba(255,255,0,.7); 
+            left: 105px; top: 95px; 
+            border-radius: 50%; 
+            animation: item2 infinite 3.2s linear; 
+            animation-direction: alternate;}
+            @keyframes item2 {
+            0%{border-radius: 15% 30% 65% 35%;}
+            20%{border-radius: 30% 35% 55% 90%;}
+            40%{border-radius: 15% 30% 25% 40%;}
+            60%{border-radius: 40% 25% 205% 150%;}
+            80%{border-radius: 140% 35% 25% 170%;}
+            100%{border-radius: 100% 50% 25% 150%;}
+        }
+        
+
+        .item3{background-color: rgba(255,0,255,.7); 
+            left: 105px; top: 105px; 
+            border-radius: 50%; 
+            animation: item3 infinite 3.2s linear; 
+            animation-direction: alternate;}
+            @keyframes item3 {
+            0%{border-radius: 150% 70% 165% 135%;}
+            20%{border-radius: 40% 65% 45% 70%;}
+            40%{border-radius: 115% 70% 125% 40%;}
+            60%{border-radius: 40% 45% 85% 100%;}
+            80%{border-radius: 140% 35% 125% 70%;}
+            100%{border-radius: 90% 150% 125% 50%;}
+        }
+
+        .item4{background-color: rgba(0,255,255,.7); 
+            left: 105px; top: 105px; 
+            border-radius: 50%; 
+            animation: item3 infinite 3.2s linear; 
+            animation-direction: alternate;
+        }
+        @keyframes item4 {
+            0%{border-radius: 140% 35% 125% 70%;}
+            20%{border-radius: 150% 70% 165% 135%;}
+            40%{border-radius: 115% 70% 125% 40%;}
+            60%{border-radius: 40% 45% 85% 100%;}
+            80%{border-radius: 90% 150% 125% 50%;}
+            100%{border-radius: 40% 65% 45% 70%;}
+        }
+
+        .item5{background-color: rgba(0,0,0,.7);
+            left: 105px; top: 105px; 
+            border-radius: 50%; 
+            animation: item3 infinite 3.2s linear; 
+            animation-direction: alternate;
+        }
+        @keyframes item5 {
+            0%{border-radius: 40% 65% 45% 70%;}
+            20%{border-radius: 150% 70% 165% 135%;}
+            40%{border-radius: 40% 45% 85% 100%;}
+            60%{border-radius: 115% 70% 125% 40%;}
+            80%{border-radius: 90% 150% 125% 50%;}
+            100%{border-radius: 140% 35% 125% 70%;}
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <input type="checkbox" name="menu-open" id="menu-open" class="menu-open">
+        <label for="menu-open" class="menu-open-button">
+            menu
+        </label>
+
+        <a href="#" class="menu-item item1"></a>
+        <a href="#" class="menu-item item2"></a>
+        <a href="#" class="menu-item item3"></a>
+        <a href="#" class="menu-item item4"></a>
+        <a href="#" class="menu-item item5"></a>
+    </nav>
+</body>
+</html>

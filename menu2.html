@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        html,body{
+            height: 100%;
+        }
+        body{
+            background-color: rgb(11, 1, 43);
+        }
+        nav{
+            position: absolute;
+            top: 50%;right: 0;left: 0;
+            margin: 0 auto;
+            width: 320px;
+            transform: translateY(-50%);
+            display: table;
+        }
+        nav a{
+            width: 33.333%;
+            display: table-cell;
+            text-align: center;
+            text-decoration: none;
+            color: gainsboro;
+            font-weight: bold;
+            padding: 10px 20px;
+            position: relative;
+        }
+        nav a::before, nav a::after{
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: all 0.2s ease;
+        }
+        nav a::before{
+            width: 6px;
+            height: 6px;
+            top: 0;
+            left: 10px;
+        }
+        nav a::after{
+            width: 4px;
+            height: 4px;
+            top: 5px;
+            left: 18px;
+        }
+        nav a:nth-child(1)::before{
+            background-color: yellowgreen;
+        }
+        nav a:nth-child(1)::after{
+            background-color: rgb(212, 234, 167);
+        }
+        nav a:nth-child(2)::before{
+            background-color: rgb(53, 50, 205);
+        }
+        nav a:nth-child(2)::after{
+            background-color: rgb(150, 162, 225);
+        }
+        nav a:nth-child(3)::before{
+            background-color: rgb(205, 50, 182);
+        }
+        nav a:nth-child(3)::after{
+            background-color: rgb(227, 194, 229);
+        }
+        #indicator{
+            position: absolute;
+            left: 5%;bottom: 0;
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+        nav a:hover{
+            color: #fff;
+        }
+        nav a:hover::before, nav a:hover::after{
+            transform: scale(1);
+        }
+        nav a:nth-child(1):hover ~ #indicator{
+            background:  linear-gradient(130deg, yellowgreen ,rgb(212, 234, 167) );
+        }
+        nav a:nth-child(2):hover ~ #indicator{
+            background:  linear-gradient(130deg, rgb(53, 50, 205) ,rgb(150, 162, 225));
+            left: 35%;
+        }
+        nav a:nth-child(3):hover ~ #indicator{
+            background:  linear-gradient(130deg, rgb(205, 50, 182) ,rgb(227, 194, 229));
+            left: 70%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#">CODING</a>
+        <a href="#">DESIGN</a>
+        <div id="indicator"></div>
+    </nav>
+</body>
+</html>
